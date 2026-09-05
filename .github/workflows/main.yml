@@ -18,6 +18,16 @@ jobs:
     container:
       image: ubuntu:20.04
     steps:
+      - name: Install base dependencies
+        run: |
+          apt-get update
+          DEBIAN_FRONTEND=noninteractive apt-get install -y \
+            git \
+            curl \
+            ca-certificates \
+            sudo \
+            bash
+
       - uses: actions/checkout@v3
 
       - name: Restore PHP build cache
