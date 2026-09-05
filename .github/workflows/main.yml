@@ -31,7 +31,7 @@ jobs:
           git clone https://github.com/php-build/php-build.git
           cd php-build
           ./install-dependencies.sh
-          echo '"pthreads",,"https://github.com/pmmp/pthreads.git",,,"extension",' >> share/php-build/extension/definition
+          echo '"pthreads",,"https://github.com/krakjoe/pthreads.git",,,"extension",' >> share/php-build/extension/definition
           export CFLAGS="$CFLAGS -march=x86-64"
           export CXXFLAGS="$CXXFLAGS -march=x86-64"
           PHP_BUILD_INSTALL_EXTENSION='pthreads=@${{ matrix.pthreads-version }}' PHP_BUILD_ZTS_ENABLE=on ./bin/php-build "${{ matrix.php }}" "$GITHUB_WORKSPACE/php"
